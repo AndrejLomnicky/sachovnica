@@ -2,7 +2,7 @@
 from PIL import Image
 
 sirka, vyska = 200, 300
-img = Image.new("RGB", (sirka, vyska), "blue")
+img = Image.new("RGB", (sirka, vyska), "white")
 pixels = img.load()
 
 for x in range(sirka):
@@ -11,4 +11,4 @@ for x in range(sirka):
             pixels[x, y] = (0, 0, 0)
         else:
             pixels[x, y] = (255, 255, 255)
-img.show()
+img.save("sachovnica.jpg")
