@@ -11,4 +11,3 @@ for x in range(sirka):
             pixels[x, y] = (0, 0, 0)
         else:
             pixels[x, y] = (255, 255, 255)
-img.save("sachovnica.jpg")
