@@ -3,18 +3,28 @@
 import tkinter as tk
 win = tk.Tk()
 win.title("moje prve okienko")
+pocitadlo = 1
 
-pocitadlo = 0
+
 def akcia():
     global pocitadlo
     print(f"akcia {pocitadlo}")
     pocitadlo += 1
-    farba = canvas.itemcget(2,"fill")
-    print(farba)
+
+
+
+    farba = canvas.itemcget(2, "fill")
+
     if farba == "black":
-        canvas.itemconfig(2,fill="red")
+        canvas.itemconfig(2, fill="red")
+        farba = canvas.itemcget(2, "fill")
+        print(farba)  # Vypíše: red
     else:
-        canvas.itemconfig(2,fill="black")
+        canvas.itemconfig(2, fill="black")
+        farba = canvas.itemcget(2, "fill")
+        print(farba)
+
+
 canvas = tk.Canvas(win, width=400, height=400, bg="coral")
 canvas.pack() #vytvorene objekty dava podseba
 button = tk.Button(win, text="stlač ma oci", width=50, bg="hotpink", command=akcia)
